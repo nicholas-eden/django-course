@@ -1,0 +1,5 @@
+{% extends 'base.djt' %}
+
+{% block content %}
+Home
+{% endblock %}

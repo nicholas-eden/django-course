@@ -1,0 +1,62 @@
+{% extends 'base.djt' %}
+
+{% block content %}
+
+{% if error %}
+<div class="alert alert-warning" role="alert">
+    {{ error }}
+</div>
+{% endif %}
+
+<h1>Create Listing</h1>
+
+<form method="post" action="{% url 'create' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-12">
+            <label>
+                Title: <br/>
+                <input type="text" name="title"/>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label>
+                URL: <br/>
+                <input type="url" name="url"/>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label>
+                Body: <br/>
+                <textarea cols="40" rows="3" name="body"></textarea>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label>
+                Image: <br/>
+                <input type="file" name="image"/>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label>
+                Icon: <br/>
+                <input type="file" name="icon"/>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <input type="submit" value="Create It!" class="btn btn-primary">
+        </div>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.djt' %}
+
+{% block content %}
+
+{% if error %}
+    <div class="alert alert-warning" role="alert">
+        {{ error }}
+    </div>
+{% endif %}
+
+<h1>Sign up</h1>
+
+<form method="post" action="{% url 'sign_up' %}">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-12">
+            <label>
+                Username: <br />
+                <input type="text" name="username"/>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label>
+                Password: <br />
+                <input type="password" name="password"/>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label>
+                Confirm Password: <br />
+                <input type="password" name="password_confirm"/>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+           <input type="submit" value="Sign Up!" class="btn btn-primary">
+        </div>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+<h1>Count: {{ count }}</h1>
+
+You said:
+<p>{{ fulltext }}</p>
+
+{% for word, word_count in word_dict %}
+<p>{{ word }} : {{ word_count }}</p>
+{% endfor %}
